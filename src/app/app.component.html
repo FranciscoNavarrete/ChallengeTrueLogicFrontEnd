@@ -1,0 +1,42 @@
+<h1> FABRICA</h1>
+
+<form autocomplete="off" [formGroup]="form">
+  <input type="text" class="form-control" id="" formControlName="search">
+
+  <button (click)="cargarEmpleados()" class="btn btn-primary"> Buscar </button>
+
+</form>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">name</th>
+      <th scope="col">contractTypeName</th>
+      <th scope="col">roleId</th>
+      <th scope="col">roleName</th>
+      <th scope="col">roleDescription</th>
+      <th scope="col">hourlySalary</th>
+      <th scope="col">monthlySalary</th>
+      <th scope="col">AnnualSalary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees;">
+      <td> {{employee.id }}</td>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.contractTypeName }}</td>
+      <td>{{ employee.roleId  }}</td>
+      <td>{{ employee.roleName  }}</td>
+      <td>{{ employee.roleDescription  }}</td>
+      <td>{{ employee.hourlySalary |  number : '1.0-2' }}</td>
+      <td>{{ employee.monthlySalary | number : '1.0-2' }}</td>
+      <td>{{ employee.annual |  number : '1.0-2' }}</td>
+    </tr>
+
+
+
+
+  </tbody>
+
+</table>
